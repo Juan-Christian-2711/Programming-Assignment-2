@@ -1,3 +1,3 @@
 # Programming-Assignment-2
 
-It Does!!
+The second assignment for Programming 1
