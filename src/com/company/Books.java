@@ -1,12 +1,14 @@
 package com.company;
 
+import java.io.FileWriter;
+
 public class Books {
-    private int BookID;
+    private String BookID;
     private String Title;
     private int pages;
     private String Genre;
-    private boolean NonFiction;
-    public int getBookID() {
+
+    public String getBookID() {
         return BookID;
     }
 
@@ -22,11 +24,7 @@ public class Books {
         return Genre;
     }
 
-    public boolean isNonFiction() {
-        return NonFiction;
-    }
-
-    public void setBookID(int bookID) {
+    public void setBookID(String bookID) {
         this.BookID = bookID;
     }
 
@@ -42,7 +40,8 @@ public class Books {
         Genre = genre;
     }
 
-    public void setNonFiction(boolean non) {
-        NonFiction = non;
+    public void writeToCSV(){
+        FileWriter writer = new FileWriter("Books.csv");
+        writer.append(BookID);
     }
 }
