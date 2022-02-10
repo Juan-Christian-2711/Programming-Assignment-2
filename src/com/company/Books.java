@@ -1,8 +1,8 @@
 package com.company;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
-import java.awt.print.Book;
 import java.io.*;
 
 public class Books {
@@ -44,23 +44,35 @@ public class Books {
     }
 
     public void writeToJSON(String BookID, String Title, int Pages, String Genre){
-        JSONObject Books = new JSONObject();
-        Books.put("BookID", BookID);
-        Books.put("Title", Title);
-        Books.put("Pages", Pages);
-        Books.put("Genre", Genre);
-        System.out.println(Books.toJSONString());
-        JSONArray Booklist = new JSONArray();
-        Booklist.add(Books);
-        try (FileWriter file = new FileWriter("Books.json", true)) {
+        JSONObject Book = new JSONObject();
+        Book.put("BookID", BookID);
+        Book.put("Title", Title);
+        Book.put("Pages", Pages);
+        Book.put("Genre", Genre);
+        JSONArray BookList = readJSON();
+        BookList.add(Book);
+        System.out.println(Book.toJSONString());
+        try (FileWriter file = new FileWriter("Books.json")) {
             //We can write any JSONArray or JSONObject instance to the file
-            file.append(Booklist.toJSONString());
+            file.write(BookList.toJSONString());
             file.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-    public void readJSON(){
+    public static JSONArray readJSON(){
+        JSONParser jsonParser = new JSONParser();
+        try (FileReader reader = new FileReader("Books.json"))
+        {
+            //Read JSON file
+            Object obj = jsonParser.parse(reader);
+            JSONArray BookList = (JSONArray) obj;
+            System.out.println(BookList);
+            return BookList;
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
 
+        return null;
     }
 }

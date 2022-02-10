@@ -3,7 +3,16 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        InputBookDetails();
+        Scanner Scanner = new Scanner(System.in);
+        System.out.println("Would you like to read or write?(1/0)");
+        String answer = Scanner.nextLine();
+        if(answer.equals("1")){
+            Books.readJSON();
+        }
+        else {
+            InputBookDetails();
+        }
+        Books.readJSON();
     }
     public static void InputBookDetails(){
         Books Book = new Books();
