@@ -1,6 +1,5 @@
 package com.company;
-
-import java.io.FileWriter;
+import org.json.simple.JSONObject;
 
 public class Books {
     private String BookID;
@@ -40,8 +39,7 @@ public class Books {
         Genre = genre;
     }
 
-    public void writeToCSV(){
-        FileWriter writer = new FileWriter("Books.csv");
-        writer.append(BookID);
+    public void writeToJSON(){
+        JSONObject obj = new JSONo
     }
 }
