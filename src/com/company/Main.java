@@ -3,16 +3,35 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
+        //runs main menu
+       MainMenu();
+    }
+    public static void MainMenu(){
+        //Prompts user to choose what to do
         Scanner Scanner = new Scanner(System.in);
-        System.out.println("Would you like to read or write?(1/0)");
+        System.out.println("Menu: " +
+                "\nadd a new book = 0" +
+                "\nRead JSON = 1" +
+                "\nquit application = 2");
         String answer = Scanner.nextLine();
         if(answer.equals("1")){
+            //runs code to read the json file and display information
             Books.readJSON();
+            MainMenu();
         }
-        else {
+        else if (answer.equals("0")){
+            //runs code to add a new book
             InputBookDetails();
+            MainMenu();
         }
-        Books.readJSON();
+        else if (answer.equals("2")){
+            System.out.println("Exiting application...");
+        }
+        else{
+            System.out.println("Syntax error");
+            MainMenu();
+        }
+
     }
     public static void InputBookDetails(){
         Books Book = new Books();
