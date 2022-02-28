@@ -11,15 +11,9 @@ public class Main {
         Scanner Scanner = new Scanner(System.in);
         System.out.println("Menu: " +
                 "\nadd a new book = 0" +
-                "\nRead JSON = 1" +
                 "\nquit application = 2");
         String answer = Scanner.nextLine();
-        if(answer.equals("1")){
-            //runs code to read the json file and display information
-            Books.readJSON();
-            MainMenu();
-        }
-        else if (answer.equals("0")){
+        if (answer.equals("0")){
             //runs code to add a new book
             InputBookDetails();
             MainMenu();
@@ -37,7 +31,7 @@ public class Main {
         Books Book = new Books();
         Scanner Scanner = new Scanner(System.in);
         String[] enterPhrase = {"Enter Book ID: ", "Enter Title: ", "Enter Genre: ","Enter Pages: "};
-        List<String> BookDetails=new ArrayList<String>();
+        List<String> BookDetails=new ArrayList<>();
         for (String s : enterPhrase) {
             System.out.println(s);
             String Item = Scanner.nextLine();
@@ -47,7 +41,6 @@ public class Main {
         Book.setTitle(BookDetails.get(1));
         Book.setGenre(BookDetails.get(2));
         Book.setPages(Integer.parseInt(BookDetails.get(3)));
-        Book.writeToJSON(Book.getBookID(), Book.getTitle(), Book.getPages(), Book.getGenre());
         boolean notcomplete = true;
         while (notcomplete){
             System.out.println("Would you like to add another book? (y/n)");
@@ -57,7 +50,6 @@ public class Main {
                 InputBookDetails();
             }
             else if (answer.equals("n")){
-                notcomplete = false;
                 return;
             }
             else{
