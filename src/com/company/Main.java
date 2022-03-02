@@ -1,6 +1,8 @@
 package com.company;
 import java.util.*;
 
+import static com.company.Books.saveBook;
+
 public class Main {
     public static void main(String[] args){
         //runs main menu
@@ -41,6 +43,7 @@ public class Main {
         Book.setTitle(BookDetails.get(1));
         Book.setGenre(BookDetails.get(2));
         Book.setPages(Integer.parseInt(BookDetails.get(3)));
+        saveBook(BookDetails);
         boolean notcomplete = true;
         while (notcomplete){
             System.out.println("Would you like to add another book? (y/n)");
@@ -57,7 +60,6 @@ public class Main {
                 System.out.println(answer);
             }
         }
-
     }
 }
 

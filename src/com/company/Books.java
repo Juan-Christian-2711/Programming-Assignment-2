@@ -1,6 +1,8 @@
 package com.company;
 
-import java.io.Serializable;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Books implements Serializable {
     private String BookID;
@@ -38,5 +40,18 @@ public class Books implements Serializable {
 
     public void setGenre(String genre) {
         Genre = genre;
+    }
+    public static void saveBook(List<String> books){
+        try{
+            FileOutputStream FOS = new FileOutputStream( "save.dat");
+            ObjectOutputStream OOS = new ObjectOutputStream(FOS);
+            OOS.writeObject(books);
+        }
+        catch(FileNotFoundException e){
+            System.out.println("Unable to save file: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Unable to create object output stream: " + e.getMessage());
+        }
+
     }
 }
