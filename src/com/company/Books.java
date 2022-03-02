@@ -1,5 +1,8 @@
 package com.company;
-public class Books {
+
+import java.io.Serializable;
+
+public class Books implements Serializable {
     private String BookID;
     private String Title;
     private int pages;
