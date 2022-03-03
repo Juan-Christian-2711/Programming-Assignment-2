@@ -1,12 +1,19 @@
 package com.company;
+import java.awt.print.Book;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.*;
 
 import static com.company.Books.saveBook;
 
 public class Main {
     public static void main(String[] args){
+
         //runs main menu
-       MainMenu();
+        MainMenu();
+        readBooks();
     }
     public static void MainMenu(){
         //Prompts user to choose what to do
@@ -60,6 +67,26 @@ public class Main {
                 System.out.println(answer);
             }
         }
+    }
+    public static List<String> loadBooks(){
+        try {
+            FileInputStream FIS = new FileInputStream("save.dat");
+            ObjectInputStream OIS = new ObjectInputStream(FIS);
+            List<String> Books = (List<String>)OIS.readObject();
+            return Books;
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error converting data to object" + e.getMessage());
+        } catch (ClassNotFoundException e) {
+            System.out.print("Cant find class representing object");
+        }
+
+        return new ArrayList<String>();
+    }
+    public static void readBooks(){
+        List<String> Books = loadBooks();
+        System.out.println(Books);
     }
 }
 

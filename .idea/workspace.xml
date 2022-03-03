@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5507eba0-e31b-4a7c-a546-aee8f5ff6d6b" name="Changes" comment="Deleting JSON functionality">
+    <list default="true" id="5507eba0-e31b-4a7c-a546-aee8f5ff6d6b" name="Changes" comment="Write to serializable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Books.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.dat" beforeDir="false" afterPath="$PROJECT_DIR$/save.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SerializeBooks.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646251654301</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Deleting JSON functionality">
+      <created>1646314575919</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1646314575919</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Write to serializable">
+      <created>1646314600890</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1646314600890</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,6 +166,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Deleting JSON functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Deleting JSON functionality" />
+    <MESSAGE value="Write to serializable" />
+    <option name="LAST_COMMIT_MESSAGE" value="Write to serializable" />
   </component>
 </project>
