@@ -1,7 +1,9 @@
 package com.company;
 
+import java.awt.print.Book;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -73,7 +75,32 @@ public class Books implements Serializable {
     }
     public static void readBooks(){
         List<String> Books = loadBooks();
-        System.out.println(Books);
+        List<ArrayList<String>> listBooks = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < Books.size() ; i++){
+            System.out.print(Books.get(i) + " ");
+            if ((i+ 1) % 4 == 0){
+                System.out.println(" ");
+            }
+        }
+    }
+    public static ArrayList searchBooks(){
+        List<String> Books = loadBooks();
+        Scanner Scanner = new Scanner(System.in);
+        System.out.print("Input ID of Book: ");
+        String answer = Scanner.nextLine();
+        ArrayList<String> temp = new ArrayList<>();
+        for (int i = 0; i < Books.size() ; i++){
+            temp.add(Books.get(i));
+            if ((i+ 1) % 4 == 0){
+                if (temp.get(0).equals(answer)){
+                    return temp;
+                }
+                else {
+                    temp.clear();
+                }
+            }
+        }
+        return null;
     }
 
     public static void InputBookDetails(){
@@ -90,6 +117,7 @@ public class Books implements Serializable {
         Book.setTitle(BookDetails.get(1));
         Book.setGenre(BookDetails.get(2));
         Book.setPages(Integer.parseInt(BookDetails.get(3)));
+        BookDetails.addAll(loadBooks());
         saveBook(BookDetails);
         boolean notcomplete = true;
         while (notcomplete){
@@ -107,5 +135,23 @@ public class Books implements Serializable {
                 System.out.println(answer);
             }
         }
+    }
+    public static void removeBooks(){
+        List<String> Book = searchBooks();
+        List<String> bookList = loadBooks();
+        // line of code that only removes the data if all four of the elements in 4 are right next to each other and the last element to be deleted modulo 4 = 0.
+        // e.g. if the elements with index 5,6,7,8 matched the list, they would be deleted
+        // take the index from search books, find that index (indexes % 4 = 0) then delete it and the 3 elements after it
+        String index = Book.get(0);
+        for (int i = 0; i < Book.size() ; i++){
+            if(Book.get(i).equals(index) && i % 4 == 0){
+                for (int x = 0; x < 4 ; x++){
+                    bookList.remove(i);
+                }
+            }
+        }
+
+        saveBook(bookList);
+        readBooks();
     }
 }

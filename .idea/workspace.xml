@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5507eba0-e31b-4a7c-a546-aee8f5ff6d6b" name="Changes" comment="Write to serializable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sources.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sources.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Books.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
@@ -167,5 +168,8 @@
     <MESSAGE value="Deleting JSON functionality" />
     <MESSAGE value="Write to serializable" />
     <option name="LAST_COMMIT_MESSAGE" value="Write to serializable" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Programming_Assignment_2$Main.ic" NAME="Main Coverage Results" MODIFIED="1646568060486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
