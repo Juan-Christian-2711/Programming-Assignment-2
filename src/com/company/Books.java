@@ -1,9 +1,7 @@
 package com.company;
 
-import java.awt.print.Book;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -137,21 +135,28 @@ public class Books implements Serializable {
         }
     }
     public static void removeBooks(){
-        List<String> Book = searchBooks();
-        List<String> bookList = loadBooks();
+        Scanner Scanner = new Scanner(System.in);
+        List<String> Books = loadBooks();
+        ArrayList<String> temp = new ArrayList<>();
+        ArrayList<String> newList = new ArrayList<>();
         // line of code that only removes the data if all four of the elements in 4 are right next to each other and the last element to be deleted modulo 4 = 0.
         // e.g. if the elements with index 5,6,7,8 matched the list, they would be deleted
         // take the index from search books, find that index (indexes % 4 = 0) then delete it and the 3 elements after it
-        String index = Book.get(0);
-        for (int i = 0; i < Book.size() ; i++){
-            if(Book.get(i).equals(index) && i % 4 == 0){
-                for (int x = 0; x < 4 ; x++){
-                    bookList.remove(i);
+        System.out.print("Input ID of Book: ");
+        String answer = Scanner.nextLine();
+
+        for (int i = 0; i < Books.size() ; i++){
+            temp.add(Books.get(i));
+            if ((i+ 1) % 4 == 0){
+                if (!temp.get(0).equals(answer)){
+                    newList.addAll(temp);
                 }
+                temp.clear();
             }
         }
-
-        saveBook(bookList);
-        readBooks();
+        saveBook(newList);
+        }
+    public static void editBooks(){
+        
     }
 }

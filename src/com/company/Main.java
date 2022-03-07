@@ -6,8 +6,6 @@ public class Main {
     public static void main(String[] args) {
         //runs main menu
         MainMenu();
-        //removeBooks();
-        //readBooks();
     }
     public static void MainMenu() {
         //Prompts user to choose what to do
@@ -16,7 +14,8 @@ public class Main {
                 "\nadd a new book = 0" +
                 "\nSee all books = 1" +
                 "\nSearch Books = 2"+
-                "\nRemove Books = 3"+
+                "\nRemove Books = 3" +
+                "\nEdit Book = 4"+
                 "\nquit application = x");
         String answer = Scanner.nextLine();
         switch (answer) {
@@ -32,6 +31,8 @@ public class Main {
             case "3":
                 removeBooks();
                 break;
+            case "4":
+                editBooks()
             case "x":
                 System.out.println("Exiting application...");
                 System.exit(0);
