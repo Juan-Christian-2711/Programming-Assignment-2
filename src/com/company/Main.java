@@ -1,5 +1,7 @@
 package com.company;
+
 import java.util.*;
+
 import static com.company.Books.*;
 
 public class Main {
@@ -7,15 +9,16 @@ public class Main {
         //runs main menu
         MainMenu();
     }
+
     public static void MainMenu() {
         //Prompts user to choose what to do
         Scanner Scanner = new Scanner(System.in);
         System.out.println("Menu: " +
                 "\nadd a new book = 0" +
                 "\nSee all books = 1" +
-                "\nSearch Books = 2"+
+                "\nSearch Books = 2" +
                 "\nRemove Books = 3" +
-                "\nEdit Book = 4"+
+                "\nEdit Book = 4" +
                 "\nquit application = x");
         String answer = Scanner.nextLine();
         switch (answer) {
