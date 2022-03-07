@@ -32,7 +32,8 @@ public class Main {
                 removeBooks();
                 break;
             case "4":
-                editBooks()
+                editBooks();
+                break;
             case "x":
                 System.out.println("Exiting application...");
                 System.exit(0);
@@ -44,4 +45,3 @@ public class Main {
         MainMenu();
     }
 }
-

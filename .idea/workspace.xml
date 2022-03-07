@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5507eba0-e31b-4a7c-a546-aee8f5ff6d6b" name="Changes" comment="Write to serializable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled104/Sources.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/Sources.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Books.java" afterDir="false" />

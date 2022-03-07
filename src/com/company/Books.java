@@ -102,6 +102,7 @@ public class Books implements Serializable {
     }
 
     public static void InputBookDetails(){
+        //This function, like many others in this application, should be reduced down as it has multiple functions. Each function should contain one function for the sake of sanity.
         Books Book = new Books();
         Scanner Scanner = new Scanner(System.in);
         String[] enterPhrase = {"Enter Book ID: ", "Enter Title: ", "Enter Genre: ","Enter Pages: "};
@@ -139,9 +140,6 @@ public class Books implements Serializable {
         List<String> Books = loadBooks();
         ArrayList<String> temp = new ArrayList<>();
         ArrayList<String> newList = new ArrayList<>();
-        // line of code that only removes the data if all four of the elements in 4 are right next to each other and the last element to be deleted modulo 4 = 0.
-        // e.g. if the elements with index 5,6,7,8 matched the list, they would be deleted
-        // take the index from search books, find that index (indexes % 4 = 0) then delete it and the 3 elements after it
         System.out.print("Input ID of Book: ");
         String answer = Scanner.nextLine();
 
@@ -157,6 +155,21 @@ public class Books implements Serializable {
         saveBook(newList);
         }
     public static void editBooks(){
-        
+        //In the criteria of this assignment, this
+        ArrayList<String> Book = searchBooks();
+        removeBooks();
+        InputBookDetails();
+    }
+    public static void sortBooks(){
+        //I want to create a list of lists, then sort that list of lists
+        List<String> Books = loadBooks();
+        ArrayList<String> temp = new ArrayList<>();
+        List<ArrayList<String>> newList = new ArrayList<ArrayList<String>>();
+        for (int i = 0; i < Books.size() ; i++){
+            temp.add(Books.get(i));
+            if ((i+ 1) % 4 == 0){
+                newList.add(temp);
+            }
+        }
     }
 }
