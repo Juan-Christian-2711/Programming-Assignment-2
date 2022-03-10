@@ -167,18 +167,28 @@ public class Books implements Serializable {
         //I want to create a list of lists, then sort that list of lists
         ArrayList<String> Books = (ArrayList<String>) loadBooks();
         ArrayList<String> temp = new ArrayList<>();
-        ArrayList<ArrayList<String>> newList = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> newList = new ArrayList<>();
         for (int i = 0; i < Books.size(); i++) {
             temp.add(Books.get(i));
             if ((i + 1) % 4 == 0) {
                 int end = temp.size();
                 int start = temp.size() -4;
-                System.out.println(end + ", " + start);
                 ArrayList<String> addList = new ArrayList<String>(temp.subList(start, end));
                 newList.add(addList);
             }
         }
-        Collections.reverse(newList);
         System.out.println(newList);
+        ArrayList<String> sorted = new ArrayList<>();
+        for(int i = 0; i < newList.size(); i++){
+            for(int x = 0; x < newList.size(); x++){
+                if(i + 1 == Integer.parseInt(newList.get(x).get(0))) {
+                    for(int z = 0; z < newList.get(x).size(); z++ ){
+                        sorted.add(newList.get(x).get(z));
+                    }
+                }
+            }
+        }
+        System.out.println(sorted);
+        saveBook(sorted);
     }
 }

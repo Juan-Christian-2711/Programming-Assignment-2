@@ -7,8 +7,7 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
-        //MainMenu();
-        sortBooks();
+        MainMenu();
     }
 
     public static void MainMenu() {
@@ -19,7 +18,8 @@ public class Main {
                 "\nSee all books = 1" +
                 "\nSearch Books = 2" +
                 "\nRemove Books = 3" +
-                "\nEdit Book = 4" +
+                "\nEdit Book = 4" + // needs to you set functions
+                "\nSort Books by index"+ // change this to page number
                 "\nquit application = x");
         String answer = Scanner.nextLine();
         switch (answer) {
@@ -37,6 +37,9 @@ public class Main {
                 break;
             case "4":
                 editBooks();
+                break;
+            case "5":
+                sortBooks();
                 break;
             case "x":
                 System.out.println("Exiting application...");
