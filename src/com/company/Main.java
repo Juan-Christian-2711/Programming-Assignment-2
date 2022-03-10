@@ -7,7 +7,8 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
-        MainMenu();
+        //MainMenu();
+        sortBooks();
     }
 
     public static void MainMenu() {

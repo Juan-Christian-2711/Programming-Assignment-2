@@ -1,9 +1,7 @@
 package com.company;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Books implements Serializable {
     private String BookID;
@@ -167,14 +165,20 @@ public class Books implements Serializable {
 
     public static void sortBooks() {
         //I want to create a list of lists, then sort that list of lists
-        List<String> Books = loadBooks();
+        ArrayList<String> Books = (ArrayList<String>) loadBooks();
         ArrayList<String> temp = new ArrayList<>();
-        List<ArrayList<String>> newList = new ArrayList<ArrayList<String>>();
+        ArrayList<ArrayList<String>> newList = new ArrayList<ArrayList<String>>();
         for (int i = 0; i < Books.size(); i++) {
             temp.add(Books.get(i));
             if ((i + 1) % 4 == 0) {
-                newList.add(temp);
+                int end = temp.size();
+                int start = temp.size() -4;
+                System.out.println(end + ", " + start);
+                ArrayList<String> addList = new ArrayList<String>(temp.subList(start, end));
+                newList.add(addList);
             }
         }
+        Collections.reverse(newList);
+        System.out.println(newList);
     }
 }
