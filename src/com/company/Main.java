@@ -7,19 +7,28 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
+        Greeting();
         MainMenu();
     }
-
+    public static void Greeting(){
+        System.out.println(" _____       _     _________________  ___  ________   __\n" +
+                "|  ___|     | |   |_   _| ___ \\ ___ \\/ _ \\ | ___ \\ \\ / /\n" +
+                "| |__ ______| |     | | | |_/ / |_/ / /_\\ \\| |_/  ∧ V / \n" +
+                "|  __|______| |     | | | ___ \\    /|  _  ||    /  \\ /  \n" +
+                "| |___      | |_____| |_| |_/ / |\\ \\| | | || |\\ \\  | |  \n" +
+                "\\____/      \\_____/\\___/\\____/\\_| \\_\\_| |_/\\_| \\_| \\_/ ");
+    }
     public static void MainMenu() {
         //Prompts user to choose what to do
         Scanner Scanner = new Scanner(System.in);
-        System.out.println("Menu: " +
+        System.out.println(
+                "\n"+"Menu: " +
                 "\nadd a new book = 0" +
                 "\nSee all books = 1" +
                 "\nSearch Books = 2" +
                 "\nRemove Books = 3" +
                 "\nEdit Book = 4" + // needs to you set functions
-                "\nSort Books by index"+ // change this to page number
+                "\nSort Books by index = 5"+ // change this to page number
                 "\nquit application = x");
         String answer = Scanner.nextLine();
         switch (answer) {
@@ -33,7 +42,8 @@ public class Main {
                 System.out.println(searchBooks());
                 break;
             case "3":
-                removeBooks();
+                removeBooks(askForID());
+                System.out.println("Book Deleted Successfully");
                 break;
             case "4":
                 editBooks();
@@ -51,4 +61,5 @@ public class Main {
         System.out.println("\n");
         MainMenu();
     }
+
 }
