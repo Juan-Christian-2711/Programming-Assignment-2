@@ -159,14 +159,14 @@ public class Books implements Serializable {
         }
     }
 
-    public static void removeBooks(String answer) {
+    public static void removeBooks(String ID) {
         List<String> Books = loadBooks();
         ArrayList<String> temp = new ArrayList<>();
         ArrayList<String> newList = new ArrayList<>();//this code is an exact repeat of code from search books
         for (int i = 0; i < Books.size(); i++) {
             temp.add(Books.get(i));
             if ((i + 1) % 4 == 0) {
-                if (!temp.get(0).equals(answer)) {
+                if (!temp.get(0).equals(ID)) {
                     newList.addAll(temp);
                 }
                 temp.clear();
@@ -174,12 +174,10 @@ public class Books implements Serializable {
         }
         saveBook(newList);
     }
-
-    public static void editBooks() {
+    public static void editBooks(ArrayList<String> Book) {
         Books Books = new Books();
         //In the criteria of this assignment, this
         //Use the set functions in this class to change the properties of the object as an object instead of as an array
-        ArrayList<String> Book = searchBooks(askForID());
         removeBooks(Book.get(0));
         SetBook(Book);
         System.out.println(GetBook());

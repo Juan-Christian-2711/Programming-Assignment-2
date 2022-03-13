@@ -110,19 +110,24 @@ class BooksTest {
 
     @org.junit.jupiter.api.Test
     void searchBooks() {
-        ArrayList Book = new ArrayList<String>();
-        Book = DummyData();
+        ArrayList Book = DummyData();
         assertEquals(Book.subList(0, 4), Books.searchBooks("1"));
         assertEquals(Book.subList(4, 8), Books.searchBooks("2"));
     }
 
     @org.junit.jupiter.api.Test
     void removeBooks() {
-
+        DummyData();
+        Books.removeBooks("1");
+        assertEquals("2 Dante's Inferno Epic Poetry 448 \n", Books.readBooks());
+        Books.removeBooks("2");
+        assertEquals("No books have been added.", Books.readBooks());
     }
 
     @org.junit.jupiter.api.Test
     void editBooks() {
+        DummyData();
+        Books.editBooks(Books.searchBooks("1"));
     }
 
     @org.junit.jupiter.api.Test

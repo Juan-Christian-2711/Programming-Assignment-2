@@ -46,7 +46,7 @@ public class Main {
                 System.out.println("Book Deleted Successfully");
                 break;
             case "4":
-                editBooks();
+                editBooks(searchBooks(askForID()));
                 break;
             case "5":
                 sortBooks();
