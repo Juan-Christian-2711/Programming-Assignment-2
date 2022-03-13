@@ -1,7 +1,5 @@
 package com.company;
 
-import java.awt.image.BandedSampleModel;
-import java.awt.print.Book;
 import java.io.*;
 import java.util.*;
 
@@ -51,7 +49,7 @@ public class Books implements Serializable {
         Book.setPages(Integer.parseInt(BookDetails.get(3)));
     }
 
-    public static ArrayList GetBook(){
+    public static ArrayList<String> GetBook(){
         ArrayList<String> Book = new ArrayList<>();
         Book.add(getBookID());
         Book.add(getTitle());
@@ -59,7 +57,6 @@ public class Books implements Serializable {
         Book.add(String.valueOf(getPages()));
         return Book;
     }
-// create a get book function
     public static void saveBook(List<String> books) {
         try {
             FileOutputStream FOS = new FileOutputStream("save.dat");
@@ -186,6 +183,7 @@ public class Books implements Serializable {
 
         removeBooks(Book.get(0));
         SetBook(Book);
+        System.out.println(GetBook());
         //case switch to choose what parameter to set
         boolean userWantsToEdit = true;
         while(userWantsToEdit){
@@ -199,28 +197,35 @@ public class Books implements Serializable {
                     "Back to main menu = x");
             String answer = Scanner.nextLine();
             String Set;
+            String request = "Input Change: ";
             switch (answer){
                 case("0"):
-                    System.out.println();
+                    System.out.println(request);
                     Set = Scanner.nextLine();
                     Books.setBookID(Set);
                     break;
                 case("1"):
-                    System.out.println();
+                    System.out.println(request);
                     Set = Scanner.nextLine();
                     Books.setTitle(Set);
                     break;
                 case("2"):
-                    System.out.println();
+                    System.out.println(request);
                     Set = Scanner.nextLine();
                     Books.setGenre(Set);
                     break;
                 case("3"):
-                    System.out.println();
+                    System.out.println(request);
                     Set = Scanner.nextLine();
                     Books.setPages(Integer.parseInt(Set));
                     break;
                 case("x"):
+                    System.out.println("Updated Book: " + GetBook());
+                    ArrayList bookSave = new ArrayList<>();
+                    bookSave.addAll(GetBook());
+                    bookSave.addAll(loadBooks());
+                    saveBook(bookSave);
+                    sortBooks();
                     return;
                 default:
                     System.out.println("Syntax error");
@@ -228,10 +233,6 @@ public class Books implements Serializable {
             }
 
         }
-
-        ArrayList bookSave = GetBook();
-        bookSave.addAll(loadBooks());
-        sortBooks();
     }
 
     public static void sortBooks() {
@@ -282,4 +283,5 @@ public class Books implements Serializable {
         }
         return answer;
     }
+    //Make a function called updatebooks that takes the existing books as a list, adds the new book and then overwrites the entire save.dat
 }
