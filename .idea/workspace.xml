@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5507eba0-e31b-4a7c-a546-aee8f5ff6d6b" name="Changes" comment="Cleaning up code">
-      <change afterPath="$PROJECT_DIR$/src/com/company/BooksTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/Books.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Books.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Books.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled104.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled104.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/BooksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BooksTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +125,20 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BooksTest.stringIsNumber (1)">
+  <component name="RunManager" selected="JUnit.BooksTest.searchBooks">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+      <module name="untitled104" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.company.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BookTest" type="JUnit" factoryName="JUnit">
       <module name="untitled104" />
       <option name="PACKAGE_NAME" value="com.company" />
@@ -136,7 +149,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksTest.setBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooksTest.readBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled104" />
       <extension name="coverage">
         <pattern>
@@ -146,13 +159,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.BooksTest" />
-      <option name="METHOD_NAME" value="setBook" />
+      <option name="METHOD_NAME" value="readBooks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksTest.setGenre" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooksTest.saveBook" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled104" />
       <extension name="coverage">
         <pattern>
@@ -162,13 +175,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.BooksTest" />
-      <option name="METHOD_NAME" value="setGenre" />
+      <option name="METHOD_NAME" value="saveBook" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksTest.setPages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooksTest.searchBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled104" />
       <extension name="coverage">
         <pattern>
@@ -178,7 +191,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.BooksTest" />
-      <option name="METHOD_NAME" value="setPages" />
+      <option name="METHOD_NAME" value="searchBooks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,20 +230,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.BookTest" />
-      <item itemvalue="JUnit.BooksTest.setPages" />
-      <item itemvalue="JUnit.BooksTest.setGenre" />
-      <item itemvalue="JUnit.BooksTest.setBook" />
+      <item itemvalue="JUnit.BooksTest.saveBook" />
       <item itemvalue="JUnit.BooksTest.stringIsNumber" />
       <item itemvalue="JUnit.BooksTest.stringIsNumber (1)" />
+      <item itemvalue="JUnit.BooksTest.readBooks" />
+      <item itemvalue="JUnit.BooksTest.searchBooks" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BooksTest.searchBooks" />
+        <item itemvalue="JUnit.BooksTest.saveBook" />
+        <item itemvalue="JUnit.BooksTest.readBooks" />
         <item itemvalue="JUnit.BooksTest.stringIsNumber (1)" />
         <item itemvalue="JUnit.BooksTest.stringIsNumber" />
-        <item itemvalue="JUnit.BooksTest.setBook" />
-        <item itemvalue="JUnit.BooksTest.setGenre" />
-        <item itemvalue="JUnit.BooksTest.setPages" />
       </list>
     </recent_temporary>
   </component>

@@ -1,10 +1,25 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class BooksTest {
+
+    public static ArrayList DummyData(){
+        ArrayList Book = new ArrayList<String>();
+        Book.add("1");
+        Book.add("The Watchmen");
+        Book.add("Graphic Novel");
+        Book.add("414");
+        Book.add("2");
+        Book.add("Dante's Inferno");
+        Book.add("Epic Poetry");
+        Book.add("448");
+        Books.saveBook(Book);
+        return Book;
+    }
 
     @org.junit.jupiter.api.Test
     void setBookID() {
@@ -40,7 +55,7 @@ class BooksTest {
         Book.setBookID("f");
         testString = Books.getBookID();
         assertEquals("0", testString);
-        assertTrue(!Books.stringIsNumber(testString));
+        assertFalse(Books.stringIsNumber(testString));
     }
 
     @org.junit.jupiter.api.Test
@@ -71,27 +86,39 @@ class BooksTest {
 
     @org.junit.jupiter.api.Test
     void saveBook() {
+        ArrayList Book = DummyData();
+        List SavedBook = Books.loadBooks();
+        for (int i = 0; i < SavedBook.size(); i++) {
+            assertEquals(SavedBook.get(i), Book.get(i));
+        }
+        assertTrue(Books.stringIsNumber((String) SavedBook.get(3)));
 
-    }
-
-    @org.junit.jupiter.api.Test
-    void loadBooks() {
     }
 
     @org.junit.jupiter.api.Test
     void readBooks() {
+        ArrayList Book = new ArrayList<String>();
+        Book.add("1");
+        Book.add("The Watchmen");
+        Book.add("Graphic Novel");
+        Book.add("414");
+        Books.saveBook(Book);
+        assertEquals("1 The Watchmen Graphic Novel 414 \n", Books.readBooks());
+        DummyData();
+        assertEquals("1 The Watchmen Graphic Novel 414 \n2 Dante's Inferno Epic Poetry 448 \n", Books.readBooks());
     }
 
     @org.junit.jupiter.api.Test
     void searchBooks() {
-    }
-
-    @org.junit.jupiter.api.Test
-    void inputBookDetails() {
+        ArrayList Book = new ArrayList<String>();
+        Book = DummyData();
+        assertEquals(Book.subList(0, 4), Books.searchBooks("1"));
+        assertEquals(Book.subList(4, 8), Books.searchBooks("2"));
     }
 
     @org.junit.jupiter.api.Test
     void removeBooks() {
+
     }
 
     @org.junit.jupiter.api.Test

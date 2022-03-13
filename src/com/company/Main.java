@@ -36,10 +36,10 @@ public class Main {
                 InputBookDetails();
                 break;
             case "1":
-                readBooks();
+                System.out.println(readBooks());
                 break;
             case "2":
-                System.out.println(searchBooks());
+                System.out.println(searchBooks(askForID()));
                 break;
             case "3":
                 removeBooks(askForID());
