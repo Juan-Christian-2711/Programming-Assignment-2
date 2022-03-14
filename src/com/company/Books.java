@@ -121,8 +121,16 @@ public class Books implements Serializable {
 
     public static void InputBookDetails() {
         Scanner Scanner = new Scanner(System.in);
-        String[] enterPhrase = {"Enter Book ID: ", "Enter Title: ", "Enter Genre: ", "Enter Pages: "};
+        String[] enterPhrase = {"Enter Title: ", "Enter Genre: ", "Enter Pages: "};
         List<String> BookDetails = new ArrayList<>();
+        if(loadBooks().size() == 0){
+            BookDetails.add("1");
+
+        }
+        else{
+            BookDetails.add(String.valueOf(Integer.valueOf(loadBooks().get(loadBooks().size()-4)) + 1));
+        }
+        System.out.println("ID: " + BookDetails.get(0));
         boolean check = true;
         for (int i = 0; i < enterPhrase.length; i++) {
             if(i == 3){
@@ -143,6 +151,7 @@ public class Books implements Serializable {
         }
         BookDetails.addAll(loadBooks());
         saveBook(BookDetails);
+        sortBooks();
         boolean notcomplete = true;
         while (notcomplete) {
             System.out.println("Would you like to add another book? (y/n)");
@@ -195,7 +204,6 @@ public class Books implements Serializable {
             Scanner Scanner = new Scanner(System.in);
 
             System.out.println("Select what would you like to edit?\n"+
-                    "BookID = 0\n"+
                     "Title = 1\n"+
                     "Genre = 2\n"+
                     "Pages = 3\n" +
@@ -204,11 +212,6 @@ public class Books implements Serializable {
             String Set;
             String request = "Input Change: ";
             switch (answer){
-                case("0"):
-                    System.out.println(request);
-                    Set = Scanner.nextLine();
-                    Books.setBookID(Set);
-                    break;
                 case("1"):
                     System.out.println(request);
                     Set = Scanner.nextLine();

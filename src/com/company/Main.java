@@ -7,7 +7,6 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
-        BooksTest.DummyData();
         Greeting();
         MainMenu();
     }
