@@ -125,15 +125,14 @@ public class Books implements Serializable {
         List<String> BookDetails = new ArrayList<>();
         if(loadBooks().size() == 0){
             BookDetails.add("1");
-
         }
         else{
-            BookDetails.add(String.valueOf(Integer.valueOf(loadBooks().get(loadBooks().size()-4)) + 1));
+            BookDetails.add(String.valueOf(Integer.parseInt(loadBooks().get(loadBooks().size()-4)) + 1));
         }
         System.out.println("ID: " + BookDetails.get(0));
         boolean check = true;
         for (int i = 0; i < enterPhrase.length; i++) {
-            if(i == 3){
+            if(i == 2){
                 System.out.println(enterPhrase[i]);
                 String Item = Scanner.nextLine();
                 while(!stringIsNumber(Item)){
