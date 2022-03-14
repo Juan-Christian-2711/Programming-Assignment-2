@@ -174,6 +174,14 @@ public class Books implements Serializable {
         }
         saveBook(newList);
     }
+    public static void SaveEdit(){
+        System.out.println("Updated Book: " + GetBook());
+        System.out.println(loadBooks());
+        ArrayList bookSave = new ArrayList<>();
+        bookSave.addAll(GetBook());
+        bookSave.addAll(loadBooks());
+        saveBook(bookSave);
+    }
     public static void editBooks(ArrayList<String> Book) {
         Books Books = new Books();
         //In the criteria of this assignment, this
@@ -217,12 +225,7 @@ public class Books implements Serializable {
                     Books.setPages(Integer.parseInt(Set));
                     break;
                 case("x"):
-                    System.out.println("Updated Book: " + GetBook());
-                    ArrayList bookSave = new ArrayList<>();
-                    bookSave.addAll(GetBook());
-                    bookSave.addAll(loadBooks());
-                    saveBook(bookSave);
-                    sortBooks();
+                    SaveEdit();
                     return;
                 default:
                     System.out.println("Syntax error");

@@ -7,6 +7,7 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
+        BooksTest.DummyData();
         Greeting();
         MainMenu();
     }
@@ -27,10 +28,11 @@ public class Main {
                 "\nSee all books = 1" +
                 "\nSearch Books = 2" +
                 "\nRemove Books = 3" +
-                "\nEdit Book = 4" + // needs to you set functions
-                "\nSort Books by index = 5"+ // change this to page number
+                "\nEdit Book = 4" +
+                "\nSort Books by index = 5"+ // change this to also sort by page number
                 "\nquit application = x");
         String answer = Scanner.nextLine();
+        //check here to see if there are any books in the database, if there aren't, then users should not be allowed to use editBooks or sortBooks etc.
         switch (answer) {
             case "0":
                 InputBookDetails();

@@ -2,13 +2,12 @@ package com.company;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class BooksTest {
 
-    public static ArrayList DummyData(){
-        ArrayList Book = new ArrayList<String>();
+    public static ArrayList<String> DummyData(){
+        ArrayList<String> Book = new ArrayList<>();
         Book.add("1");
         Book.add("The Watchmen");
         Book.add("Graphic Novel");
@@ -67,7 +66,7 @@ class BooksTest {
 
     @org.junit.jupiter.api.Test
     void setBook() {
-        ArrayList Book = new ArrayList<String>();
+        ArrayList<String> Book = new ArrayList<String>();
         Book.add("1");
         Book.add("The Watchmen");
         Book.add("Graphic Novel");
@@ -86,18 +85,18 @@ class BooksTest {
 
     @org.junit.jupiter.api.Test
     void saveBook() {
-        ArrayList Book = DummyData();
-        List SavedBook = Books.loadBooks();
+        ArrayList<String> Book = DummyData();
+        List<String> SavedBook = Books.loadBooks();
         for (int i = 0; i < SavedBook.size(); i++) {
             assertEquals(SavedBook.get(i), Book.get(i));
         }
-        assertTrue(Books.stringIsNumber((String) SavedBook.get(3)));
+        assertTrue(Books.stringIsNumber(SavedBook.get(3)));
 
     }
 
     @org.junit.jupiter.api.Test
     void readBooks() {
-        ArrayList Book = new ArrayList<String>();
+        ArrayList<String> Book = new ArrayList<String>();
         Book.add("1");
         Book.add("The Watchmen");
         Book.add("Graphic Novel");
@@ -110,7 +109,7 @@ class BooksTest {
 
     @org.junit.jupiter.api.Test
     void searchBooks() {
-        ArrayList Book = DummyData();
+        ArrayList<String> Book = DummyData();
         assertEquals(Book.subList(0, 4), Books.searchBooks("1"));
         assertEquals(Book.subList(4, 8), Books.searchBooks("2"));
     }
@@ -127,11 +126,36 @@ class BooksTest {
     @org.junit.jupiter.api.Test
     void editBooks() {
         DummyData();
-        Books.editBooks(Books.searchBooks("1"));
+        ArrayList<String> Book = new ArrayList<>();
+        Book.add("1");
+        Book.add("The Watchmen");
+        Book.add("Graphic Novel");
+        Book.add("415");
+        Books.removeBooks(Book.get(0));
+        Books.SetBook(Book);
+        Books.SetBook(Book);
+        Books.SaveEdit();
+        assertEquals("1 The Watchmen Graphic Novel 415 \n2 Dante's Inferno Epic Poetry 448 \n", Books.readBooks());
     }
 
     @org.junit.jupiter.api.Test
     void sortBooks() {
+        ArrayList<String> Book = new ArrayList<>();
+        Book.addAll(DummyData());
+        Book.add("4");
+        Book.add("Beyond Good and Evil");
+        Book.add("Philosophy");
+        Book.add("281");
+        Book.add("3");
+        Book.add("V for Vendetta");
+        Book.add("Graphic Novel");
+        Book.add("265");
+        Books.saveBook(Book);
+        Books.sortBooks();
+        assertEquals("1 The Watchmen Graphic Novel 414 \n" +
+                "2 Dante's Inferno Epic Poetry 448 \n" +
+                "3 V for Vendetta Graphic Novel 265 \n" +
+                "4 Beyond Good and Evil Philosophy 281 \n", Books.readBooks());
     }
 
     @org.junit.jupiter.api.Test
@@ -148,7 +172,4 @@ class BooksTest {
         assertFalse(Books.stringIsNumber(""));
     }
 
-    @org.junit.jupiter.api.Test
-    void askForID() {
-    }
 }

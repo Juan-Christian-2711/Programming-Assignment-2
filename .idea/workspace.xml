@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Books.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/BooksTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/BooksTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/untitled104/com/company/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Books.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Books.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/BooksTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BooksTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
@@ -41,6 +42,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="24ZU1zcgDKwCpBOSaOtoVrLXVVO" />
   <component name="ProjectView">
@@ -125,7 +129,7 @@
       <recent name="com.company" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BooksTest.removeBooks">
+  <component name="RunManager" selected="JUnit.BookTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.company.Main" />
       <module name="untitled104" />
@@ -149,7 +153,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksTest.readBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooksTest.editBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled104" />
       <extension name="coverage">
         <pattern>
@@ -159,7 +163,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.BooksTest" />
-      <option name="METHOD_NAME" value="readBooks" />
+      <option name="METHOD_NAME" value="editBooks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -213,7 +217,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BooksTest.stringIsNumber (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BooksTest.sortBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="untitled104" />
       <extension name="coverage">
         <pattern>
@@ -223,7 +227,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.company" />
       <option name="MAIN_CLASS_NAME" value="com.company.BooksTest" />
-      <option name="METHOD_NAME" value="stringIsNumber" />
+      <option name="METHOD_NAME" value="sortBooks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,18 +237,18 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.BookTest" />
       <item itemvalue="JUnit.BooksTest.saveBook" />
-      <item itemvalue="JUnit.BooksTest.stringIsNumber (1)" />
-      <item itemvalue="JUnit.BooksTest.readBooks" />
       <item itemvalue="JUnit.BooksTest.searchBooks" />
       <item itemvalue="JUnit.BooksTest.removeBooks" />
+      <item itemvalue="JUnit.BooksTest.editBooks" />
+      <item itemvalue="JUnit.BooksTest.sortBooks" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BooksTest.sortBooks" />
+        <item itemvalue="JUnit.BooksTest.editBooks" />
         <item itemvalue="JUnit.BooksTest.removeBooks" />
         <item itemvalue="JUnit.BooksTest.searchBooks" />
         <item itemvalue="JUnit.BooksTest.saveBook" />
-        <item itemvalue="JUnit.BooksTest.readBooks" />
-        <item itemvalue="JUnit.BooksTest.stringIsNumber (1)" />
       </list>
     </recent_temporary>
   </component>
