@@ -58,6 +58,7 @@ public class Books implements Serializable {
         return Book;
     }
     public static void saveBook(List<String> books) {
+        //Saves the book data to the file save.dat in the list "books".
         try {
             FileOutputStream FOS = new FileOutputStream("save.dat");
             ObjectOutputStream OOS = new ObjectOutputStream(FOS);
@@ -70,6 +71,7 @@ public class Books implements Serializable {
     }
 
     public static List<String> loadBooks() {
+        //Loads book data from the save.dat file.
         try {
             FileInputStream FIS = new FileInputStream("save.dat");
             ObjectInputStream OIS = new ObjectInputStream(FIS);
@@ -87,6 +89,7 @@ public class Books implements Serializable {
     }
 
     public static String readBooks() {
+        //parses the loadBook data into a more readable format and returns it as a string.
         List<String> Books = loadBooks();
         String Output = "";
         if(Books.size() == 0){
@@ -267,6 +270,7 @@ public class Books implements Serializable {
     }
 
     public static boolean stringIsNumber(String str){
+        //Checks to see if a string can be converted to a number before attempting to, in order to avoid errors not being caught.
         try{
             Integer.parseInt(str);
             return true;
@@ -276,6 +280,7 @@ public class Books implements Serializable {
         }
     }
     public static String askForID(){
+        //prompts user for an ID number, checks to see if it is a number and returns the ID.
         Scanner Scanner = new Scanner(System.in);
         System.out.print("Input ID of Book: ");
         String answer = Scanner.nextLine();
@@ -285,5 +290,4 @@ public class Books implements Serializable {
         }
         return answer;
     }
-    //Make a function called updatebooks that takes the existing books as a list, adds the new book and then overwrites the entire save.dat
 }

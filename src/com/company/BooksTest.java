@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BooksTest {
 
     public static ArrayList<String> DummyData(){
+        //Provides some default Book information for testing.
         ArrayList<String> Book = new ArrayList<>();
         Book.add("1");
         Book.add("The Watchmen");

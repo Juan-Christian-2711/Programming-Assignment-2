@@ -7,19 +7,17 @@ import static com.company.Books.*;
 public class Main {
     public static void main(String[] args) {
         //runs main menu
-        Greeting();
-        MainMenu();
-    }
-    public static void Greeting(){
         System.out.println(" _____       _     _________________  ___  ________   __\n" +
                 "|  ___|     | |   |_   _| ___ \\ ___ \\/ _ \\ | ___ \\ \\ / /\n" +
                 "| |__ ______| |     | | | |_/ / |_/ / /_\\ \\| |_/  ∧ V / \n" +
                 "|  __|______| |     | | | ___ \\    /|  _  ||    /  \\ /  \n" +
                 "| |___      | |_____| |_| |_/ / |\\ \\| | | || |\\ \\  | |  \n" +
                 "\\____/      \\_____/\\___/\\____/\\_| \\_\\_| |_/\\_| \\_| \\_/ ");
+        MainMenu();
+
     }
     public static void MainMenu() {
-        //Prompts user to choose what to do
+        //Prompts user to choose what to do repeatedly until the user decides to quit.
         Scanner Scanner = new Scanner(System.in);
         System.out.println(
                 "\n"+"Menu: " +
