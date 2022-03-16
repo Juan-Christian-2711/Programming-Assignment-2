@@ -96,8 +96,9 @@ public class Books implements Serializable {
             Output = "No books have been added.";
         }
         else {
+            System.out.println("ID| Name | Genre | Pages |");
             for (int i = 0; i < Books.size(); i++) {
-                Output += Books.get(i) + " ";
+                Output += Books.get(i) + " | ";
                 if ((i + 1) % 4 == 0) {
                     Output += "\n";
                 }
@@ -126,14 +127,7 @@ public class Books implements Serializable {
         Scanner Scanner = new Scanner(System.in);
         String[] enterPhrase = {"Enter Title: ", "Enter Genre: ", "Enter Pages: "};
         List<String> BookDetails = new ArrayList<>();
-        if(loadBooks().size() == 0){
-            BookDetails.add("1");
-        }
-        else{
-            BookDetails.add(String.valueOf(Integer.parseInt(loadBooks().get(loadBooks().size()-4)) + 1));
-        }
-        System.out.println("ID: " + BookDetails.get(0));
-        boolean check = true;
+        BookDetails = generateID(BookDetails);
         for (int i = 0; i < enterPhrase.length; i++) {
             if(i == 2){
                 System.out.println(enterPhrase[i]);
@@ -149,11 +143,28 @@ public class Books implements Serializable {
                 String Item = Scanner.nextLine();
                 BookDetails.add(Item);
             }
-
         }
+        saveInput(BookDetails);
+    }
+    public static void saveInput(List<String>BookDetails){
+        System.out.println(BookDetails);
         BookDetails.addAll(loadBooks());
         saveBook(BookDetails);
         sortBooks();
+        repeatInputBookDetails();
+    }
+    public static List<String> generateID(List<String> BookDetails){
+        if(loadBooks().size() == 0){
+            BookDetails.add("1");
+        }
+        else{
+            BookDetails.add(String.valueOf(Integer.parseInt(loadBooks().get(loadBooks().size()-4)) + 1));
+        }
+        System.out.println("ID: " + BookDetails.get(0));
+        return BookDetails;
+    }
+    public static void repeatInputBookDetails(){
+        Scanner Scanner = new Scanner(System.in);
         boolean notcomplete = true;
         while (notcomplete) {
             System.out.println("Would you like to add another book? (y/n)");
@@ -192,6 +203,7 @@ public class Books implements Serializable {
         bookSave.addAll(GetBook());
         bookSave.addAll(loadBooks());
         saveBook(bookSave);
+        sortBooks();
     }
     public static void editBooks(ArrayList<String> Book) {
         Books Books = new Books();
@@ -210,34 +222,39 @@ public class Books implements Serializable {
                     "Genre = 2\n"+
                     "Pages = 3\n" +
                     "Back to main menu = x");
-            String answer = Scanner.nextLine();
-            String Set;
-            String request = "Input Change: ";
-            switch (answer){
-                case("1"):
-                    System.out.println(request);
-                    Set = Scanner.nextLine();
-                    Books.setTitle(Set);
-                    break;
-                case("2"):
-                    System.out.println(request);
-                    Set = Scanner.nextLine();
-                    Books.setGenre(Set);
-                    break;
-                case("3"):
-                    System.out.println(request);
-                    Set = Scanner.nextLine();
-                    Books.setPages(Integer.parseInt(Set));
-                    break;
-                case("x"):
-                    SaveEdit();
-                    return;
-                default:
-                    System.out.println("Syntax error");
-                    break;
-            }
-
+            userWantsToEdit = editBooksSwitch();
         }
+    }
+    public static Boolean editBooksSwitch(){
+        Books Books = new Books();
+        Scanner Scanner = new Scanner(System.in);
+        String answer = Scanner.nextLine();
+        String Set;
+        String request = "Input Change: ";
+        switch (answer){
+            case("1"):
+                System.out.println(request);
+                Set = Scanner.nextLine();
+                Books.setTitle(Set);
+                break;
+            case("2"):
+                System.out.println(request);
+                Set = Scanner.nextLine();
+                Books.setGenre(Set);
+                break;
+            case("3"):
+                System.out.println(request);
+                Set = Scanner.nextLine();
+                Books.setPages(Integer.parseInt(Set));
+                break;
+            case("x"):
+                SaveEdit();
+                return false;
+            default:
+                System.out.println("Syntax error");
+                break;
+        }
+        return true;
     }
 
     public static void sortBooks() {
@@ -254,7 +271,6 @@ public class Books implements Serializable {
                 newList.add(addList);
             }
         }
-        System.out.println(newList);
         ArrayList<String> sorted = new ArrayList<>();
         for(int i = 0; i < newList.size(); i++){
             for(int x = 0; x < newList.size(); x++){
@@ -265,7 +281,6 @@ public class Books implements Serializable {
                 }
             }
         }
-        System.out.println(sorted);
         saveBook(sorted);
     }
 
@@ -289,5 +304,17 @@ public class Books implements Serializable {
             answer = Scanner.nextLine();//this code is an exact repeat of code from search books
         }
         return answer;
+    }
+    public static double calculateReadingTime(String BookID){
+        ArrayList<String> Book = searchBooks(BookID);
+        int pages = Integer.parseInt(Book.get(3));
+        double pagesPerMinute = 0.5;
+        double readingTimeMinuets = pages / pagesPerMinute;
+        System.out.println(Book.get(1) + " has " + pages + " pages and will take roughly " + Math.round(Math.floor(readingTimeMinuets/60)) + " hours and " + Math.round(readingTimeMinuets%60) + " Minutes to read.");
+        return readingTimeMinuets;
+    }
+
+    public static void LongestReadingTime(){
+
     }
 }

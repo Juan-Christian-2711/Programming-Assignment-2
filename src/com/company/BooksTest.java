@@ -28,12 +28,6 @@ class BooksTest {
         String testString = Books.getBookID();
         assertEquals("1", testString);
         assertTrue(Books.stringIsNumber(testString));
-
-
-        Book.setBookID("f");
-        testString = Books.getBookID();
-        assertEquals("0", testString);
-        assertTrue(!Books.stringIsNumber(testString));
     }
 
     @org.junit.jupiter.api.Test
@@ -54,6 +48,7 @@ class BooksTest {
 
         Book.setBookID("f");
         testString = Books.getBookID();
+        //when pages is not set to a int, it should default to 0.
         assertEquals("0", testString);
         assertFalse(Books.stringIsNumber(testString));
     }
